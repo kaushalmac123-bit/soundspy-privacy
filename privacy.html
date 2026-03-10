@@ -1,416 +1,543 @@
 <!doctype html>
 
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
+    <title>SoundSpy Privacy Policy</title>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts: Outfit & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <title>SoundSpy Privacy Policy</title>
+    <style>
+      :root {
+        --primary: #6366f1;
+        --secondary: #9333ea;
+        --accent: #f43f5e;
+        --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+        --glass-bg: rgba(255, 255, 255, 0.03);
+        --glass-border: rgba(255, 255, 255, 0.1);
+        --text-main: #f8fafc;
+        --text-dim: #94a3b8;
 
-  <!-- Poppins Font -->
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    /* Animated gradient background */
-
-    body {
-
-      font-family: 'Poppins', sans-serif;
-
-      background: linear-gradient(270deg, #4f46e5, #7c3aed, #9333ea, #6366f1);
-      background-size: 800% 800%;
-      animation: gradientMove 18s ease infinite;
-
-      min-height: 100vh;
-
-      padding: 60px 20px;
-
-      color: #222;
-
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-
-    }
-
-    /* gradient animation */
-
-    @keyframes gradientMove {
-
-      0% {
-        background-position: 0% 50%
+        /* Fluid Spacing & Typography */
+        --fluid-padding: clamp(1.25rem, 5vw, 3rem);
+        --fluid-gap: clamp(1.5rem, 6vw, 4rem);
       }
 
-      50% {
-        background-position: 100% 50%
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
       }
 
-      100% {
-        background-position: 0% 50%
+      body {
+        font-family: "Inter", sans-serif;
+        background: var(--bg-gradient);
+        color: var(--text-main);
+        min-height: 100vh;
+        overflow-x: hidden;
+        line-height: 1.6;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
 
-    }
+      /* Animated Mesh Background */
+      .mesh-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        overflow: hidden;
+        pointer-events: none;
+      }
 
-    /* container */
+      .mesh-sphere {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.35;
+        animation: float 20s infinite alternate ease-in-out;
+      }
 
-    .container {
+      .sphere-1 {
+        width: clamp(250px, 45vw, 600px);
+        height: clamp(250px, 45vw, 600px);
+        background: var(--primary);
+        top: -10%;
+        left: -10%;
+      }
 
-      width: 100%;
-      max-width: 900px;
+      .sphere-2 {
+        width: clamp(200px, 40vw, 500px);
+        height: clamp(200px, 40vw, 500px);
+        background: var(--secondary);
+        bottom: -10%;
+        right: -10%;
+        animation-delay: -5s;
+      }
 
-    }
+      .sphere-3 {
+        width: clamp(150px, 30vw, 400px);
+        height: clamp(150px, 30vw, 400px);
+        background: var(--accent);
+        top: 40%;
+        right: 15%;
+        animation-delay: -10s;
+      }
 
-    /* glass card */
+      @keyframes float {
+        0% {
+          transform: translate(0, 0) scale(1);
+        }
+        100% {
+          transform: translate(40px, 30px) scale(1.1);
+        }
+      }
 
-    .card {
+      /* Reading Progress */
+      .progress-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
+        width: 0%;
+        z-index: 2000;
+        transition: width 0.1s linear;
+      }
 
-      background: rgba(255, 255, 255, 0.94);
-      backdrop-filter: blur(16px);
+      /* Container */
+      .container {
+        width: 100%;
+        max-width: clamp(320px, 92vw, 1100px);
+        margin: 0 auto;
+        padding: clamp(3rem, 12vh, 8rem) var(--fluid-padding);
+      }
 
-      border-radius: 20px;
-
-      padding: 45px;
-
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-
-    }
-
-    /* title */
-
-    h1 {
-
-      text-align: center;
-      font-size: 42px;
-
-      margin-bottom: 10px;
-
-      background: linear-gradient(90deg, #6366f1, #9333ea);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-
-    }
-
-    /* updated text */
-
-    .lastUpdated {
-
-      text-align: center;
-      margin-bottom: 30px;
-      color: #555;
-
-    }
-
-    /* intro */
-
-    .intro {
-
-      text-align: center;
-      margin-bottom: 20px;
-
-    }
-
-    /* sections */
-
-    .section {
-
-      margin-top: 30px;
-
-      padding: 22px;
-
-      background: #ffffff;
-
-      border-radius: 14px;
-
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
-
-      animation: fadeUp 0.7s ease;
-
-    }
-
-    /* headings */
-
-    h2 {
-
-      color: #4f46e5;
-      margin-bottom: 10px;
-
-    }
-
-    /* list */
-
-    ul {
-
-      margin-left: 20px;
-      margin-top: 10px;
-
-    }
-
-    li {
-
-      margin-bottom: 6px;
-
-    }
-
-    /* link */
-
-    a {
-
-      color: #4f46e5;
-      text-decoration: none;
-      font-weight: 500;
-
-    }
-
-    a:hover {
-
-      text-decoration: underline;
-
-    }
-
-    /* fade animation */
-
-    @keyframes fadeUp {
-
-      from {
+      /* Header */
+      .header {
+        text-align: center;
+        margin-bottom: var(--fluid-gap);
         opacity: 0;
-        transform: translateY(15px);
+        transform: translateY(25px);
+        transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
 
-      to {
+      .header.visible {
         opacity: 1;
         transform: translateY(0);
       }
 
-    }
-
-    /* mobile */
-
-    @media(max-width:600px) {
-
-      .card {
-        padding: 28px;
-      }
-
       h1 {
-        font-size: 32px;
+        font-family: "Outfit", sans-serif;
+        font-size: clamp(2.4rem, 11vw, 5rem);
+        font-weight: 700;
+        line-height: 1.05;
+        letter-spacing: -0.03em;
+        margin-bottom: 1.25rem;
+        background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
 
-    }
-  </style>
+      .lastUpdated {
+        font-size: clamp(0.75rem, 2vw, 0.95rem);
+        color: var(--text-dim);
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-weight: 500;
+      }
 
-</head>
+      .intro {
+        margin-bottom: var(--fluid-gap);
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 1s ease-out 0.2s;
+      }
 
-<body>
+      .intro.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-  <div class="container">
+      .intro-text {
+        font-size: clamp(1.1rem, 2.8vw, 1.3rem);
+        color: var(--text-dim);
+        text-align: center;
+        max-width: 750px;
+        margin: 0 auto;
+      }
 
-    <div class="card">
+      /* Sections */
+      .section {
+        background: var(--glass-bg);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid var(--glass-border);
+        border-radius: clamp(1.5rem, 4vw, 2.5rem);
+        padding: var(--fluid-padding);
+        margin-bottom: 2.5rem;
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+      }
 
-      <h1>Privacy Policy</h1>
+      .section.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-      <p class="lastUpdated"><strong>Last updated:</strong> March 2026</p>
+      .section:hover {
+        border-color: rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.06);
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      }
 
-      <p class="intro">
-        Thank you for using <strong>SoundSpy</strong>.
-      </p>
+      h2 {
+        font-family: "Outfit", sans-serif;
+        color: var(--primary);
+        font-size: clamp(1.4rem, 4.5vw, 2rem);
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+      }
 
-      <p class="intro">
-        SoundSpy is a prank sound application designed purely for entertainment purposes. This Privacy Policy explains
-        how information may be collected, used, and protected when you use the application.
-      </p>
+      p {
+        margin-bottom: 1.25rem;
+        color: var(--text-dim);
+        font-size: clamp(1rem, 2.2vw, 1.15rem);
+      }
 
-      <div class="section">
+      strong {
+        color: #fff;
+        font-weight: 600;
+      }
 
+      ul {
+        list-style: none;
+        margin: clamp(1.5rem, 4vw, 2rem) 0;
+      }
+
+      li {
+        margin-bottom: 1.25rem;
+        padding-left: clamp(1.5rem, 4vw, 2rem);
+        position: relative;
+        color: var(--text-dim);
+        font-size: clamp(1rem, 2.2vw, 1.15rem);
+      }
+
+      li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.6em;
+        width: clamp(6px, 1.5vw, 10px);
+        height: clamp(6px, 1.5vw, 10px);
+        background: var(--primary);
+        border-radius: 50%;
+        box-shadow: 0 0 15px var(--primary);
+      }
+
+      a {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      a::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background: var(--primary);
+        transition: width 0.3s ease;
+      }
+
+      a:hover {
+        color: #fff;
+      }
+      a:hover::after {
+        width: 100%;
+        background: #fff;
+      }
+
+      .contact-info {
+        background: linear-gradient(
+          135deg,
+          rgba(99, 102, 241, 0.18),
+          rgba(147, 51, 234, 0.12)
+        );
+        border: 1px solid rgba(147, 51, 234, 0.3);
+      }
+
+      /* Cursor Glow Style */
+      .cursor-glow {
+        position: fixed;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(
+          circle,
+          rgba(99, 102, 241, 0.15) 0%,
+          rgba(147, 51, 234, 0.05) 40%,
+          transparent 70%
+        );
+        border-radius: 50%;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        z-index: -1;
+        filter: blur(50px);
+        transition: transform 0.15s cubic-bezier(0.2, 0, 0.2, 1);
+        opacity: 0;
+      }
+
+      body:hover .cursor-glow {
+        opacity: 1;
+      }
+
+      /* Accessibility */
+      @media (prefers-reduced-motion: reduce) {
+        .header,
+        .intro,
+        .section,
+        .mesh-sphere {
+          animation: none !important;
+          transition: none !important;
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="mesh-bg">
+      <div class="mesh-sphere sphere-1"></div>
+      <div class="mesh-sphere sphere-2"></div>
+      <div class="mesh-sphere sphere-3"></div>
+    </div>
+
+    <!-- Interactive Cursor Glow -->
+    <div class="cursor-glow" id="cursor-glow"></div>
+
+    <div class="progress-bar" id="progress"></div>
+
+    <div class="container">
+      <header class="header animate-reveal">
+        <h1>Privacy Policy</h1>
+        <p class="lastUpdated">Last updated: March 2026</p>
+      </header>
+
+      <div class="intro animate-reveal">
+        <p class="intro-text">
+          Thank you for using <strong>SoundSpy</strong>. SoundSpy is a prank
+          sound application designed purely for entertainment purposes. This
+          policy explains how we handle your data.
+        </p>
+      </div>
+
+      <div class="section animate-reveal">
         <h2>1. Information We Collect</h2>
-
         <p>
-          SoundSpy does not collect personal information such as your name, email address, phone number, contacts,
-          location, photos, or files.
+          SoundSpy does not collect personal information such as your name,
+          email address, phone number, contacts, location, photos, or files.
         </p>
-
         <p>
-          However, the app may automatically collect limited technical information required for the application to
-          function properly.
+          However, the app may automatically collect limited technical
+          information required for the application to function properly.
         </p>
-
         <p>This may include:</p>
-
         <ul>
           <li>Anonymous device identifier (Firebase device token)</li>
           <li>Device model and operating system version</li>
           <li>Basic app usage data</li>
         </ul>
-
-        <p>
-          This information cannot be used to personally identify users.
-        </p>
-
+        <p>This information cannot be used to personally identify users.</p>
       </div>
 
-      <div class="section">
-
+      <div class="section animate-reveal">
         <h2>2. Push Notifications</h2>
-
         <p>
-          SoundSpy uses <strong>Firebase Cloud Messaging (FCM)</strong> to send optional notifications to users.
+          SoundSpy uses <strong>Firebase Cloud Messaging (FCM)</strong> to send
+          optional notifications to users.
         </p>
-
         <p>
-          To deliver notifications, Firebase may generate a unique device token associated with your device. This token
-          is used only for sending notifications related to the app and is not used to identify you personally.
+          To deliver notifications, Firebase may generate a unique device token
+          associated with your device. This token is used only for sending
+          notifications related to the app and is not used to identify you
+          personally.
         </p>
-
         <p>
-          Firebase services are provided by Google and may collect limited technical data according to their privacy
-          policies.
+          Firebase services are provided by Google and may collect limited
+          technical data according to their privacy policies.
         </p>
-
         <p>
-          You can disable notifications at any time through your device settings.
+          You can disable notifications at any time through your device
+          settings.
         </p>
-
       </div>
 
-      <div class="section">
-
+      <div class="section animate-reveal">
         <h2>3. How We Use Information</h2>
-
-        <p>Any information collected is used only for the following purposes:</p>
-
+        <p>
+          Any information collected is used only for the following purposes:
+        </p>
         <ul>
           <li>Delivering push notifications</li>
           <li>Improving app stability and performance</li>
           <li>Ensuring the application functions correctly</li>
         </ul>
-
         <p>
           SoundSpy does not sell, rent, or share user data with third parties.
         </p>
-
       </div>
 
-      <div class="section">
-
+      <div class="section animate-reveal">
         <h2>4. Data Storage</h2>
-
         <p>
-          SoundSpy may store certain app preferences locally on your device such as:
+          SoundSpy may store certain app preferences locally on your device such
+          as:
         </p>
-
         <ul>
           <li>Favorite sounds</li>
           <li>Application settings</li>
           <li>Timer preferences</li>
         </ul>
-
         <p>
-          This data remains stored only on your device and is not transmitted to our servers.
+          This data remains stored only on your device and is not transmitted to
+          our servers.
         </p>
-
       </div>
 
-      <div class="section">
-
+      <div class="section animate-reveal">
         <h2>5. Third-Party Services</h2>
-
         <p>SoundSpy uses the following third-party service:</p>
-
         <ul>
-          <li><strong>Firebase Cloud Messaging (Google)</strong> – used only to send notifications.</li>
+          <li>
+            <strong>Firebase Cloud Messaging (Google)</strong> – used only to
+            send notifications.
+          </li>
         </ul>
-
         <p>You can review Google's privacy policy here:</p>
-
         <p>
           <a href="https://policies.google.com/privacy">
             https://policies.google.com/privacy
           </a>
         </p>
-
       </div>
 
-      <div class="section">
-
+      <div class="section animate-reveal">
         <h2>6. Children's Privacy</h2>
-
         <p>SoundSpy is not intended for children under the age of 13.</p>
-
         <p>We do not knowingly collect personal information from children.</p>
-
         <p>
-          If you believe that a child has provided personal information through the app, please contact us so that we
-          can take appropriate action.
+          If you believe that a child has provided personal information through
+          the app, please contact us so that we can take appropriate action.
         </p>
-
       </div>
 
-      <div class="section">
-
+      <div class="section animate-reveal">
         <h2>7. Security</h2>
-
         <p>
-          We take reasonable steps to protect any information used by the application. However, no digital service can
-          guarantee absolute security.
+          We take reasonable steps to protect any information used by the
+          application. However, no digital service can guarantee absolute
+          security.
         </p>
-
       </div>
 
-      <div class="section">
-
+      <div class="section animate-reveal">
         <h2>8. Changes to This Privacy Policy</h2>
-
         <p>
-          We may update this Privacy Policy from time to time. Updates will be posted within the app or on the page
-          where this policy is displayed.
+          We may update this Privacy Policy from time to time. Updates will be
+          posted within the app or on the page where this policy is displayed.
         </p>
-
         <p>
-          Continued use of the app after changes means you accept the updated policy.
+          Continued use of the app after changes means you accept the updated
+          policy.
         </p>
-
       </div>
 
-      <div class="section">
-
+      <div class="section animate-reveal contact-info">
         <h2>9. Contact Us</h2>
-
         <p>
-          If you have any questions regarding this Privacy Policy, you may contact us:
+          If you have any questions regarding this Privacy Policy, you may
+          contact us:
         </p>
-
-        <p>Email: dev2applitz2020@gmail.com</p>
-
         <p>
-          Developer: <strong>Kaushal Gajera</strong><br>
+          Email:
+          <a href="mailto:dev2applitz2020@gmail.com"
+            ><strong>dev2applitz2020@gmail.com</strong></a
+          >
+        </p>
+        <p>
+          Developer: <strong>Kaushal Gajera</strong><br />
           Application: <strong>SoundSpy</strong>
         </p>
-
       </div>
 
-      <div class="section">
-
+      <div class="section animate-reveal">
         <h2>Disclaimer</h2>
-
         <p>
-          SoundSpy is intended for entertainment purposes only. Users are responsible for using prank sounds responsibly
-          and avoiding disturbance or misuse.
+          SoundSpy is intended for entertainment purposes only. Users are
+          responsible for using prank sounds responsibly and avoiding
+          disturbance or misuse.
         </p>
-
       </div>
-
     </div>
 
-  </div>
+    <script>
+      // Intersection Observer for scroll reveal
+      const observerOptions = {
+        threshold: 0.1,
+      };
 
-</body>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, observerOptions);
 
+      document
+        .querySelectorAll(".animate-reveal, .header, .intro")
+        .forEach((el) => {
+          observer.observe(el);
+        });
+
+      // Reading Progress Bar
+      window.addEventListener("scroll", () => {
+        const winScroll =
+          document.body.scrollTop || document.documentElement.scrollTop;
+        const height =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById("progress").style.width = scrolled + "%";
+      });
+
+      // Cursor Glow Logic
+      const glow = document.getElementById("cursor-glow");
+      window.addEventListener("mousemove", (e) => {
+        glow.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
+      });
+    </script>
+  </body>
 </html>
